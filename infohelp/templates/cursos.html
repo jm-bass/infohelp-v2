@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tech Academy - Cursos</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="flex flex-col min-h-screen">
+        <header class="bg-background-light dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-3 text-primary">
+                            <span class="material-symbols-outlined text-3xl">school</span>
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Tech Academy</h2>
+                        </div>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Início</a>
+                            <a class="text-sm font-bold text-primary dark:text-primary" href="#">Catálogo</a>
+                            <a class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Planos</a>
+                            <a class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Comunidade</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative hidden sm:block">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
+                            <input
+                                class="form-input rounded-full bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-primary/50 focus:border-primary w-full pl-10 pr-4 py-2 text-sm text-gray-900 dark:text-gray-100"
+                                placeholder="Buscar cursos..." type="search" />
+                        </div>
+                        <button
+                            class="hidden sm:flex items-center justify-center rounded-full h-10 px-5 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                            Entrar
+                        </button>
+                        <button class="w-10 h-10 rounded-full bg-cover bg-center"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCn90S3DHk77amLnctQ25OcM6KJ4X4BGMcJi8uLMuTflN42BtLJlpJFn8ixGWpr-YZdEUkwYqWvVTm-ANpZSo5LFYqRXXOKSPkWqNHI4xN_tSnYV9OElE0lYydgclujLFzmsxI572R6aRjOYj-pTBwv9uIepRwg6dYGN8w_37_5kdgXZ4fTbPNaNwtzEm0AZvQCi5XcPC2bZsKjLwD69Pam_TEL8W0J91um20O9EYYjrPUInxqyPH6juzbR_kyV_q5SCOGnc-IjoHg");'></button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-8 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tighter">Catálogo
+                        de Cursos</h1>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Explore nossa vasta gama de cursos de tecnologia, projetados para impulsionar sua carreira e
+                        habilidades.
+                    </p>
+                </div>
+                <div class="mb-10">
+                    <div
+                        class="bg-white dark:bg-gray-800/50 p-4 rounded-xl shadow-md flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+                        <label class="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                            for="category-filter">
+                            <span class="material-symbols-outlined text-xl">filter_list</span>
+                            Filtrar por Categoria:
+                        </label>
+                        <div class="relative w-full md:w-auto">
+                            <select
+                                class="form-select w-full md:w-64 rounded-lg border-gray-300 dark:border-gray-600 bg-background-light dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                                id="category-filter">
+                                <option>Todas as Categorias</option>
+                                <option>Desenvolvimento Web</option>
+                                <option>Ciência de Dados</option>
+                                <option>Segurança</option>
+                                <option>UI/UX Design</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <section>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        <div
+                            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full h-48 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzuoJtoOUYsasvzXduVQHmeAh10P20GKYrffksNXSGcyKEDuFqrD0cc-JA0d5I8otkMnCuYjA1VW0nomc8gY6AZ4HDIAicjCD3rLQzo69S61d0ULRUqPRtcRXbgs1Yl_Ywjqcjq3dUYBVShhHbRpmQoboC8zqUEAx1ONN0j-16heshAn0UJaaepE9LZxF8YhDy1EAFcL7Be9DJ8FSC-NGR-heTbkggBez-AjLNVI2H4c4lGmEy1hcJaurYcosNo_pSMXOx-lgLzVk");'>
+                                </div>
+                                <div
+                                    class="absolute top-3 right-3 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    Web Dev</div>
+                            </div>
+                            <div class="p-5">
+                                <h3
+                                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    Desenvolvimento Web Avançado</h3>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
+                                        <span>40h</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">bar_chart</span>
+                                        <span>Avançado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full h-48 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCy2vonup_UZoVWbfr8LoWsRD3GKJ0WAwSjMVdlbjJfWlPPnuVkfKTNWsXh1n4Tc_uKq-4b6BhfcjPUYDnXAq4wcJvkhiQc83gnynQUQZT7bRNF7lrrhERDFU3Tka8BO2BxPpSeWJLrihobWXyU2Ap0B6nbm9pT_fLEO4m_mjC5D888zEoE7Qu-jMtoK26QLHTa-Zplfu63VrVwAXnpLyfMZF7I5jBDNUctEv09idzE2wHhONvmRxB7COYYlnNvHD7qpoMvO_zAKNo");'>
+                                </div>
+                                <div
+                                    class="absolute top-3 right-3 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    Data Science</div>
+                            </div>
+                            <div class="p-5">
+                                <h3
+                                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    Ciência de Dados para Negócios</h3>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
+                                        <span>60h</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">bar_chart</span>
+                                        <span>Intermediário</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full h-48 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkwhmOxoztvvRiwuWn3EWMQyOAjtcT3z8Q8Esr7lOBVpr0o5sUkwve-APWOPbZ6oB9uRfdoQYWn1oDqL4q7FYVTRpBijb06Zxodq-o1C4mS-Z-swk0tX-wf1S3mroxzwBdb-jh3vsJNlHx0lEw2mNrrL2A3ADLebKCp0ntoDGz_m0ffItytnhAg2UlhKqlm1xfeB50zNoemBPCUMiJhVeGsjXJWi5kl0j7TrBin86-hfD6NrKpEirQMG2xxXd_1khzrS0ttTBkEhY");'>
+                                </div>
+                                <div
+                                    class="absolute top-3 right-3 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    Segurança</div>
+                            </div>
+                            <div class="p-5">
+                                <h3
+                                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    Segurança Cibernética Essencial</h3>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
+                                        <span>35h</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">bar_chart</span>
+                                        <span>Iniciante</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full h-48 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCroLwWnKqBfC1G9ahb6EXzxp6kP3HauzG3LhbZlHjnG8PYKdg2tHv4KT8EWryA9CzK6KkeP-XZWbOst_BRlyU_sh62tqncUklX308jbh-p9A7LxF1j81yScq-j2gAgZtef3BzroN3Qv8_WM8bRnWPoGGLfVxkPUiJfQp5FETYzl_6PHRMKYq__LPCeiuR4U8K18vLANhU_EzSqbWA243iVOx-Q4hcNTTlJgW4xXjog5B454_EDErChbYWf3O3r8LAfrwTwAQurHf8");'>
+                                </div>
+                                <div
+                                    class="absolute top-3 right-3 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    UI/UX</div>
+                            </div>
+                            <div class="p-5">
+                                <h3
+                                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    Design de UI/UX Intuitivo</h3>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
+                                        <span>25h</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">bar_chart</span>
+                                        <span>Intermediário</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full h-48 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkfJRULlbyOrYMnzXmnVIB22kemJWKwB52vKtaUKyGhus3ugjz3Q21vQ1dcOaplDg1Npy09b8PakqLbQdlZKAZM2CqyHNJCMLgdsRo1kldpcSEegZOXCIxI5YJPgnMEUkpUXTlCvejM7bVrkMRLGsbiw20qS_7q131d9feqwIgSW2z1H2PVNLUdgVdaC1wQ1Y2x0y6AtQ23yy6A6ZZz8zR3q27HQt9knNyjpkVSyG22qwAGzmmB8qRh6SXcL74V_ZyfgotOvgGMyQ");'>
+                                </div>
+                                <div
+                                    class="absolute top-3 right-3 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    Web Dev</div>
+                            </div>
+                            <div class="p-5">
+                                <h3
+                                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    Introdução ao HTML e CSS</h3>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
+                                        <span>15h</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">bar_chart</span>
+                                        <span>Iniciante</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full h-48 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDkcsYNrLB8indkPzrNEiwcjUPcaySgxIAra3fPkjkU1SYXcmMFkc1T1ROX0fuJbGEq_iyyk5cq2SrTTh8544ty35voGtwNfWxHQR83urO3lqbIdkjOW073Y9wetXHQhdsv0NQW3kiZytVnKLnN6CpXHqVUoMhjTt1HEU7fpzipy_l3t0Z2eJnRE8I8bA_1QW7gG2whxtKAhXY0GJjRxWPKTgbEx9O-_sGdBvq6njszq1C5gYAhZzcj7gf1Devrk7G-baL_VZRGBQ");'>
+                                </div>
+                                <div
+                                    class="absolute top-3 right-3 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    Web Dev</div>
+                            </div>
+                            <div class="p-5">
+                                <h3
+                                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    JavaScript para Iniciantes</h3>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
+                                        <span>20h</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">bar_chart</span>
+                                        <span>Iniciante</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full h-48 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCy2vonup_UZoVWbfr8LoWsRD3GKJ0WAwSjMVdlbjJfWlPPnuVkfKTNWsXh1n4Tc_uKq-4b6BhfcjPUYDnXAq4wcJvkhiQc83gnynQUQZT7bRNF7lrrhERDFU3Tka8BO2BxPpSeWJLrihobWXyU2Ap0B6nbm9pT_fLEO4m_mjC5D888zEoE7Qu-jMtoK26QLHTa-Zplfu63VrVwAXnpLyfMZF7I5jBDNUctEv09idzE2wHhONvmRxB7COYYlnNvHD7qpoMvO_zAKNo");'>
+                                </div>
+                                <div
+                                    class="absolute top-3 right-3 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    Data Science</div>
+                            </div>
+                            <div class="p-5">
+                                <h3
+                                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    Machine Learning Básico</h3>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
+                                        <span>50h</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">bar_chart</span>
+                                        <span>Intermediário</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full h-48 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkwhmOxoztvvRiwuWn3EWMQyOAjtcT3z8Q8Esr7lOBVpr0o5sUkwve-APWOPbZ6oB9uRfdoQYWn1oDqL4q7FYVTRpBijb06Zxodq-o1C4mS-Z-swk0tX-wf1S3mroxzwBdb-jh3vsJNlHx0lEw2mNrrL2A3ADLebKCp0ntoDGz_m0ffItytnhAg2UlhKqlm1xfeB50zNoemBPCUMiJhVeGsjXJWi5kl0j7TrBin86-hfD6NrKpEirQMG2xxXd_1khzrS0ttTBkEhY");'>
+                                </div>
+                                <div
+                                    class="absolute top-3 right-3 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                    Segurança</div>
+                            </div>
+                            <div class="p-5">
+                                <h3
+                                    class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                    Análise de Malware</h3>
+                                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-2 space-x-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">schedule</span>
+                                        <span>45h</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base">bar_chart</span>
+                                        <span>Avançado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 flex justify-center">
+                        <nav aria-label="Pagination" class="flex items-center space-x-2">
+                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                                href="#">
+                                <span class="material-symbols-outlined">chevron_left</span>
+                            </a>
+                            <a aria-current="page"
+                                class="flex items-center justify-center w-10 h-10 rounded-full text-white bg-primary text-sm font-bold"
+                                href="#">1</a>
+                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
+                                href="#">2</a>
+                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
+                                href="#">3</a>
+                            <span
+                                class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 text-sm">...</span>
+                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
+                                href="#">10</a>
+                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                                href="#">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </a>
+                        </nav>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

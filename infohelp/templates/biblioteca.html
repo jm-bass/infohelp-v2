@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .progress-bar::-webkit-progress-bar {
+            background-color: #e2e8f0;
+            border-radius: 9999px;
+        }
+
+        .progress-bar::-webkit-progress-value {
+            background-color: #1173d4;
+            border-radius: 9999px;
+        }
+
+        .dark .progress-bar::-webkit-progress-bar {
+            background-color: #334155;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    <script defer="" src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+    <div class="flex flex-col min-h-screen">
+        <header
+            class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-20 border-b border-slate-200 dark:border-slate-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center space-x-8">
+                        <a class="flex items-center space-x-2" href="#">
+                            <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6_319)">
+                                    <path
+                                        d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                                        fill="currentColor"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_6_319">
+                                        <rect fill="white" height="48" width="48"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <h1 class="text-xl font-bold text-slate-800 dark:text-white">Tech Academy</h1>
+                        </a>
+                        <nav class="hidden md:flex items-center space-x-6">
+                            <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Cursos</a>
+                            <a class="text-sm font-medium text-primary dark:text-primary" href="#">Biblioteca</a>
+                            <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Roadmaps</a>
+                            <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Comunidade</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="relative hidden sm:block">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500">search</span>
+                            <input
+                                class="w-full pl-10 pr-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border-transparent focus:ring-primary focus:border-primary text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500"
+                                placeholder="Buscar cursos..." type="text" />
+                        </div>
+                        <button
+                            class="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">notifications</span>
+                        </button>
+                        <div class="flex-shrink-0">
+                            <img alt="User profile" class="h-10 w-10 rounded-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3JQ8eiyopxjst6CJYPHwhyXMihyfIln-8gf24zBbcIYWCYRz8ZQmV09KG5PtTSf64LPvMvCjB3lLWXlPQGFVJwndFGkfopJYgpgWJB9Me6BfGgphz-125tDJR5-iE7LBTr21OTAkMp3MGlQfa7hNIxLhfEZ2qgjKN3cTW0V2k8vSo1B9xBCzY3Vniyf2ooJbEBUIdJuFeObi3c0tpz_IFOJlfwPk2J3EDmzba-eJIV8v0diKWht4WCqjLWblNxIuFFp7tOtc-zG8" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <div class="bg-background-light dark:bg-background-dark/50 py-12 sm:py-16">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        Minha Biblioteca
+                    </h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400">
+                        Seu espaço pessoal para organizar e acompanhar sua jornada de aprendizado.
+                    </p>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8" x-data="{ activeTab: 'inProgress' }">
+                <div class="max-w-7xl mx-auto">
+                    <div class="border-b border-slate-200 dark:border-slate-800 mb-8">
+                        <nav aria-label="Tabs" class="-mb-px flex justify-center space-x-4 sm:space-x-8">
+                            <button
+                                :class="{ 'border-primary text-primary': activeTab === 'inProgress', 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 dark:text-slate-400 dark:hover:text-slate-300 dark:hover:border-slate-700': activeTab !== 'inProgress' }"
+                                @click="activeTab = 'inProgress'"
+                                class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ease-in-out flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">hourglass_top</span>
+                                Cursos em Progresso
+                            </button>
+                            <button
+                                :class="{ 'border-primary text-primary': activeTab === 'saved', 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 dark:text-slate-400 dark:hover:text-slate-300 dark:hover:border-slate-700': activeTab !== 'saved' }"
+                                @click="activeTab = 'saved'"
+                                class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 ease-in-out flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">bookmark_border</span>
+                                Cursos Salvos
+                            </button>
+                        </nav>
+                    </div>
+                    <div x-cloak="" x-show="activeTab === 'inProgress'">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            <div
+                                class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-200 dark:border-slate-800">
+                                <img alt="Advanced JavaScript course" class="w-full h-40 object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxyjfHNc69oYmTIrnD9bfisr7PecWHFoiw6Y1TksLWgInt3wQxt_QWSIcJy5Z8YJcPMEq1drydDHRXU_pgfRztcCvsUexBgddrdW2htBvbzaPvJ9rY-RW0Sycy16fSqETtQTPx2-ntECUZ3qol-smoy25xgWYEE3YemVUD9qcPzyAWqcLbHoJNZaZh_cphWngn1h7Uvu4T6HoQZW126q8hp8Ht5xzLRIrlruZRvInkSVcxG1sfX8NkqTcpF8753fORXgf_Yj4bpyE" />
+                                <div class="p-5">
+                                    <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-2 truncate">Advanced
+                                        JavaScript</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 h-10">Deep dive into
+                                        advanced JavaScript concepts.</p>
+                                    <div class="flex items-center gap-3">
+                                        <progress class="w-full h-2 rounded-full progress-bar" max="100"
+                                            value="75"></progress>
+                                        <span
+                                            class="text-xs font-semibold text-slate-600 dark:text-slate-300">75%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-200 dark:border-slate-800">
+                                <img alt="Machine Learning course" class="w-full h-40 object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBW0jNGe0FB50FMXhpDJPsBHNEEAXq1Led3dcOzBt3sSeH0plMtwaYJkLp8mJAuZj-DZQ3IJ15QGhmb6dSh03ZYxv-7Nht6n41wBHPn-z5er_WPLM49SVpKeihrx0Sc1FKX2JybXVAFWhUWugzk_fpbHZpBhC8a6ZwFpS67PswFPaaDltRcUMPGvwNbdgcYXq0lBqtLvSI4KzQAVxOl0kbOJcYkUe9NdNatTW9tE0AAa_V1K5PNLcPz3ek5kDtoXmtPqHvAVEvigE" />
+                                <div class="p-5">
+                                    <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-2 truncate">Machine
+                                        Learning com Python</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 h-10">Build machine
+                                        learning models using Python.</p>
+                                    <div class="flex items-center gap-3">
+                                        <progress class="w-full h-2 rounded-full progress-bar" max="100"
+                                            value="40"></progress>
+                                        <span
+                                            class="text-xs font-semibold text-slate-600 dark:text-slate-300">40%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-200 dark:border-slate-800">
+                                <img alt="Cloud Computing course" class="w-full h-40 object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-s9uDK2owgCGqj8lZ_nnX1qFuG3OSmnVsJuQcZ4omxe4b1IhfUXZuMv-h3iNJX9qkhRzEd3wfpxX8xZdIbxaWDTAWzVBNSxs6-o_iF1fPgfabI1pEZ8jv1sirdVPBqT2nvl77YKd8JEU4Qg4O8oOhkmj1GJZR8gy6OAw0w7LP9bzRVKTmm5mChpFni1gXVLAFZODdwCU8vot40vZ20Dz1YtVx1Y6kF9wVpEunXKlz3MD7LsT7snWFfJbBSJ0wFYj4oSkJk0dw9e8" />
+                                <div class="p-5">
+                                    <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-2 truncate">Cloud
+                                        Computing Basics</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 h-10">Learn the
+                                        fundamentals of cloud computing.</p>
+                                    <div class="flex items-center gap-3">
+                                        <progress class="w-full h-2 rounded-full progress-bar" max="100"
+                                            value="15"></progress>
+                                        <span
+                                            class="text-xs font-semibold text-slate-600 dark:text-slate-300">15%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-cloak="" x-show="activeTab === 'saved'">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                            <div
+                                class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-200 dark:border-slate-800 group">
+                                <div class="relative">
+                                    <img alt="Python course" class="w-full h-40 object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdzBWk0FFQ8sJo-sP401JwpoGubp4Bi9T6YvW_8ZAxVmFA1M7L8x1gGKFKQMoVrmkDIrwQWnAz9uhTyAbvGMkEC6D1lfjt367T7SWUcYBYLSuKd_2skyB7qlEoZgTVEGrZ_jrFgmsESe6uzVHzAkgPju4Q-QxHwsdBqfVKfviUa6SL_aV2pqHZXboo8e0KD6ZRP2kUgUJsjeyAFHPMifNK4CrwGQr9TksJy0PoHGjTp-9I6KiRBfpRE0hhiBUXLdczXU7r0UzUEUo" />
+                                    <div
+                                        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <button
+                                            class="bg-primary text-white font-bold py-2 px-5 rounded-full flex items-center gap-2 transform group-hover:scale-105 transition-transform duration-300">
+                                            <span class="material-symbols-outlined">play_arrow</span>
+                                            Iniciar Curso
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-2 truncate">
+                                        Introdução a Python</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 h-10">Learn the basics of
+                                        Python programming.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-200 dark:border-slate-800 group">
+                                <div class="relative">
+                                    <img alt="Web Development course" class="w-full h-40 object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmG3qKUdGS_awWWII752UAwJ_t87UsSkWR435gT00kmKTGPzfjLjhsslLc81xYNPLEmOnRzJ_0N916p5-EVYeJ33cZWVk-Yo1SXn7zh7kQnUl2d5IDwGbjN2B7QM9CJlJylJKfMIBTiTG_DlhwantTS0QiJjU6f0j_hKkSlHFENG_k9B5qEnxjfF6tMDiX9kGFJf13CiHa2K0cAXkV4vYeZt_Fkps6tFPAQSUHGHL6uV8cRd-Ttun4qxQ6oivdMzc-j2vb8B123eA" />
+                                    <div
+                                        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <button
+                                            class="bg-primary text-white font-bold py-2 px-5 rounded-full flex items-center gap-2 transform group-hover:scale-105 transition-transform duration-300">
+                                            <span class="material-symbols-outlined">play_arrow</span>
+                                            Iniciar Curso
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-2 truncate">Web
+                                        Development Fundamentals</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 h-10">Master the fundamentals
+                                        of web development.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-200 dark:border-slate-800 group">
+                                <div class="relative">
+                                    <img alt="Data Science course" class="w-full h-40 object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrYJmNhmq7RHa__XjGMJuD52pv0xccOXX0k_MKTGY1qXcJ8oCzNTBY8u25RqdOMZ-uM5Pv7EAODoCR2WNwL47Klu18K2gJpqe6mVwk4_Clh-mACOGok70UOSq_ajdry74dc-FLJchZmQczshtg37qoM2eOLmRp1oHzRwgaESBn4rJU9yqN9KoVeXuVVmH-tMAiDfdmHXsLIrk_y5si-0_DfDcr1aQf8LBTKbRwvIMLQJkfR5_0zc6gPzv9TmSYFZ2rAMR_HgOqPy0" />
+                                    <div
+                                        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <button
+                                            class="bg-primary text-white font-bold py-2 px-5 rounded-full flex items-center gap-2 transform group-hover:scale-105 transition-transform duration-300">
+                                            <span class="material-symbols-outlined">play_arrow</span>
+                                            Iniciar Curso
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-2 truncate">Data
+                                        Science com R</h3>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400 h-10">Explore data science
+                                        concepts using R.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
