@@ -7,11 +7,19 @@ class Categoria(models.Model):
 
     def __str__(self):
         return self.nome
+    
+class Dificuldade(models.Model):
+    nome = models.CharField(max_length=100)
+    descricao = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.nome
 
 class Curso(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, related_name='cursos')
+    dificuldade = models.ForeignKey(Dificuldade, on_delete=models.SET_NULL, null=True, related_name='cursos')
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cursos')  # Dono/professor
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_atualizacao = models.DateTimeField(auto_now=True)
