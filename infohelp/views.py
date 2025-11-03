@@ -1,13 +1,13 @@
-from django.shortcuts import render, redirect
-from .models import Curso, Categoria
-from .forms import CursoForm, CategoriaForm
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Curso, Dificuldade,Categoria
+from .forms import CursoForm, DificuldadeForm,CategoriaForm
 
 def criar_categoria(request):
     if request.method == 'POST':
         form = CategoriaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_categorias')
+            return redirect('listar_cursos')
     else:
         form = CategoriaForm()
     return render(request, 'criar_categoria.html', {'form': form})
@@ -33,6 +33,37 @@ def deletar_categoria(request, pk):
 
 
 
+def criar_dificuldade(request):
+    if request.method == 'POST':
+        form = DificuldadeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_cursos')  # ou a página que desejar
+    else:
+        form = DificuldadeForm()
+    return render(request, 'criar_dificuldade.html', {'form': form})
+
+def editar_dificuldade(request, pk):
+    dificuldade = get_object_or_404(Dificuldade, pk=pk)
+    if request.method == 'POST':
+        form = DificuldadeForm(request.POST, instance=dificuldade)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_cursos')
+    else:
+        form = DificuldadeForm(instance=dificuldade)
+    return render(request, 'editar_dificuldade.html', {'form': form})
+
+def deletar_dificuldade(request, pk):
+    dificuldade = get_object_or_404(Dificuldade, pk=pk)
+    if request.method == 'POST':
+        dificuldade.delete()
+        return redirect('listar_cursos')
+    return render(request, 'deletar_dificuldade.html', {'dificuldade': dificuldade})
+
+
+
+
 def index(request):
     return render(request, "index.html")
 
@@ -44,7 +75,7 @@ def criar_curso(request):
         form = CursoForm(request.POST, request.FILES)
         if form.is_valid():
             curso = form.save(commit=False)
-            curso.usuario = request.user  # Associa o curso ao usuário logado
+            #curso.usuario = request.user  # Associa o curso ao usuário logado
             curso.save()
             return redirect('listar_cursos')
     else:

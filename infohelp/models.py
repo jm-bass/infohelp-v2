@@ -20,7 +20,7 @@ class Curso(models.Model):
     descricao = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, related_name='cursos')
     dificuldade = models.ForeignKey(Dificuldade, on_delete=models.SET_NULL, null=True, related_name='cursos')
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cursos')  # Dono/professor
+    #usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cursos')  # Dono/professor
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_atualizacao = models.DateTimeField(auto_now=True)
     ativo = models.BooleanField(default=True)
