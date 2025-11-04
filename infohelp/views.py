@@ -7,7 +7,7 @@ def criar_categoria(request):
         form = CategoriaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_cursos')
+            return redirect('criar_curso')
     else:
         form = CategoriaForm()
     return render(request, 'criar_categoria.html', {'form': form})
@@ -38,7 +38,7 @@ def criar_dificuldade(request):
         form = DificuldadeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_cursos')  # ou a página que desejar
+            return redirect('criar_curso')  # ou a página que desejar
     else:
         form = DificuldadeForm()
     return render(request, 'criar_dificuldade.html', {'form': form})
@@ -70,6 +70,9 @@ def index(request):
 def inicio(request):
     return render(request, "inicio.html")
 
+
+
+
 def criar_curso(request):
     if request.method == 'POST':
         form = CursoForm(request.POST, request.FILES)
@@ -82,10 +85,30 @@ def criar_curso(request):
         form = CursoForm()
     return render(request, 'criar_curso.html', {'form': form})
 
-
 def listar_cursos(request):
     cursos = Curso.objects.all().order_by('-data_criacao')
     return render(request, 'cursos.html', {'cursos': cursos})
+
+def editar_curso(request, pk):
+    curso = get_object_or_404(Curso, pk=pk)
+    if request.method == 'POST':
+        form = CursoForm(request.POST, request.FILES, instance=curso)
+        if form.is_valid():
+            form.save()
+            return redirect('listar_cursos')
+    else:
+        form = CursoForm(instance=curso)
+    return render(request, 'editar_curso.html', {'form': form, 'curso': curso})
+
+def deletar_curso(request, pk):
+    curso = get_object_or_404(Curso, pk=pk)
+    if request.method == 'POST':
+        curso.delete()
+        return redirect('listar_cursos')
+    return render(request, 'deletar_curso.html', {'curso': curso})
+
+
+
 
 def biblioteca(request):
     return render(request, "biblioteca.html")

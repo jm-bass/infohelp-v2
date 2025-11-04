@@ -15,6 +15,8 @@ urlpatterns = [
 
     path('cursos/novo/', views.criar_curso, name='criar_curso'),
     path('cursos/', views.listar_cursos, name='listar_cursos'),
+    path('cursos/<int:pk>/editar/', views.editar_curso, name='editar_curso'),
+    path('cursos/<int:pk>/deletar/', views.deletar_curso, name='deletar_curso'),
     
     path('biblioteca/', views.biblioteca, name="biblioteca"),
     path('login/', views.login, name="login"),
