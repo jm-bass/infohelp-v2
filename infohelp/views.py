@@ -7,7 +7,7 @@ def criar_categoria(request):
         form = CategoriaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_cursos')
+            return redirect('criar_curso')
     else:
         form = CategoriaForm()
     return render(request, 'criar_categoria.html', {'form': form})
@@ -38,7 +38,7 @@ def criar_dificuldade(request):
         form = DificuldadeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_cursos')  # ou a página que desejar
+            return redirect('criar_curso')  # ou a página que desejar
     else:
         form = DificuldadeForm()
     return render(request, 'criar_dificuldade.html', {'form': form})
