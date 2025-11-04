@@ -19,6 +19,7 @@
                         habilidades.
                     </p>
                 </div>
+                <!--
                 <div class="mb-10">
                     <div
                         class="bg-white dark:bg-gray-800/50 p-4 rounded-xl shadow-md flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
@@ -40,6 +41,7 @@
                         </div>
                     </div>
                 </div>
+                -->
 
 
                 <section>
@@ -70,15 +72,25 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Botões visíveis só no hover -->
+                                <div class="mb-6 bottom-4 left-0 w-full flex justify-center gap-4
+                                            hidden group-hover:flex transition-opacity duration-300">
+                                    <a href="{% url 'editar_curso' curso.pk %}"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-bold shadow">
+                                        Editar
+                                    </a>
+                                    <a href="{% url 'deletar_curso' curso.pk %}"
+                                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded font-bold shadow">
+                                        Excluir
+                                    </a>
+                                </div>
                             </div>
 
                         {% empty %}
                             <p>Nenhum curso cadastrado ainda.</p>
                         {% endfor %}
 
-                        <div> 
-                            <a href="{% url 'criar_curso' %}">criar novo curso</a>
-                        </div>
 
 
                         <!--
@@ -112,30 +124,35 @@
 
 
 
-                    <div class="mt-12 flex justify-center">
-                        <nav aria-label="Pagination" class="flex items-center space-x-2">
-                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
-                                href="#">
-                                <span class="material-symbols-outlined">chevron_left</span>
-                            </a>
-                            <a aria-current="page"
-                                class="flex items-center justify-center w-10 h-10 rounded-full text-white bg-primary text-sm font-bold"
-                                href="#">1</a>
-                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
-                                href="#">2</a>
-                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
-                                href="#">3</a>
-                            <span
-                                class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 text-sm">...</span>
-                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
-                                href="#">10</a>
-                            <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
-                                href="#">
-                                <span class="material-symbols-outlined">chevron_right</span>
-                            </a>
-                        </nav>
+                        <div class="mt-12 flex justify-center">
+                            <nav aria-label="Pagination" class="flex items-center space-x-2">
+                                <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                                    href="#">
+                                    <span class="material-symbols-outlined">chevron_left</span>
+                                </a>
+                                <a aria-current="page"
+                                    class="flex items-center justify-center w-10 h-10 rounded-full text-white bg-primary text-sm font-bold"
+                                    href="#">1</a>
+                                <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
+                                    href="#">2</a>
+                                <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
+                                    href="#">3</a>
+                                <span
+                                    class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 text-sm">...</span>
+                                <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary text-sm font-medium"
+                                    href="#">10</a>
+                                <a class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 dark:text-gray-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                                    href="#">
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </a>
+                            </nav>
+                        </div>
+                        -->
                     </div>
-                       -->
+
+                     <div> 
+                            <a href="{% url 'criar_curso' %}">criar novo curso</a>
+                        </div>
 
                 </section>
             </div>
