@@ -42,7 +42,7 @@ class Aula(models.Model):
         return f'{self.titulo} ({self.curso.titulo})'
 
 class Biblioteca(models.Model):
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='biblioteca')
+    #usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='biblioteca')
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name='favoritos')
     data_adicionado = models.DateTimeField(auto_now_add=True)
 
