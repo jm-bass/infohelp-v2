@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Curso, Dificuldade,Categoria
 from .forms import CursoForm, DificuldadeForm,CategoriaForm
 
+from usuarios.views import cadastro_usuario
+
 def criar_categoria(request):
     if request.method == 'POST':
         form = CategoriaForm(request.POST)
